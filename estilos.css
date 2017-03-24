@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: url(imgs/areia.png), url(imgs/oceano.png), url(imgs/nuvens.png);
+  background-repeat: no-repeat;
+  background-position: left bottom, left calc(100% - 283px + 265px/2), 200% top;
+  background-color: lightblue;
+  background-size: auto, auto, 50%;
+  animation: deslocando-fundo-para-esquerda 120s linear 0s infinite;
+}
+
+#nuvens {
+  height: 200px;
+  animation: movendo-para-esquerda 20s linear 0s infinite;
+}
+
+@keyframes movendo-para-esquerda {
+  from { transform: translate3d( 100%, 0, 0); }
+  to   { transform: translate3d(-100%, 0, 0); }
+}
+
+@keyframes deslocando-fundo-para-esquerda {
+  from { background-position: left bottom, left calc(100% - 283px + 265px/2), 200% top; }
+  to   { background-position: left bottom, left calc(100% - 283px + 265px/2), -100% top; }
+}
